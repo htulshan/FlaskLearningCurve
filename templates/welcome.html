@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+
+{% block content %}
+    <h1>Welcome to the my Website</h1>
+    <p>
+        This is my github page.
+        <em>All my repo are here</em>
+        on <a href="https://github.com/htulshan">Github</a>
+    </p>
+
+    <h2>Flash Cards</h2>
+    <ul>
+        {% for card in cards %}
+            <li>
+                <a href="{{ url_for('cards', index=loop.index0) }}">
+                    {{ card.question }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Card Operations</h3>
+    <ul>
+        <li>
+            <a href="{{ url_for('add_card') }}">
+                Add card
+            </a>
+        </li>
+    </ul>
+{% endblock %}
