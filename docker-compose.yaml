@@ -1,16 +1,12 @@
 version: "3"
 
 services:
-  flash_cards_app:
+  flash_cards:
     build: .
-    ports:
-      - "80:5000"
     volumes:
       - ".:/app"
     env_file:
       - '.env'
-    networks:
-      - flash_cards
+    ports:
+      - "80:80"
 
-networks:
-  flash_cards:
